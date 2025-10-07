@@ -1,0 +1,43 @@
+GET http://localhost:8000/students
+
+
+
+###
+
+
+GET http://localhost:8000/students/68e584cfdd48cec314740a4e
+
+
+### 
+
+POST http://localhost:8000/students
+Content-Type: application/json
+
+{
+    "name": "Micah",
+    "class": "DWA"
+}
+
+###
+
+POST http://localhost:8000/students
+Content-Type: application/json
+
+{
+    "name": "Micah 2",
+    "class": "DWA"
+}
+
+###
+
+DELETE http://localhost:8000/students/68e584c1dd48cec314740a4c
+
+### 
+
+PATCH http://localhost:8000/students/68e584c1dd48cec314740a4c
+Content-Type: application/json
+
+{
+    "name": "Micahs Bacas 2",
+    "class": "DWA"
+}
