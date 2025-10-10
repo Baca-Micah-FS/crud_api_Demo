@@ -10,7 +10,7 @@ const createStudent = async (request, response) => {
       data: student,
     });
   } catch (error) {
-    response.status(400).josn({
+    response.status(400).json({
       message: error.message,
       success: false,
     });
