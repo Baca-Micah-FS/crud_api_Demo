@@ -6,8 +6,8 @@
   },
   "main": "index.js",
   "scripts": {
-    "install-reactjs": "npm install --prefix reactapp",
-    "install-api": "npm install --prefix api",
+    "install-reactjs": "cd reactapp && npm install",
+    "install-api": "cd api && npm install",
     "build-reactjs": "npm run build --prefix reactapp",
     "heroku-postbuild": "concurrently \"npm:install-*\"; concurrently \"npm:build-*\"; ",
     "start": "npm start --prefix api",
