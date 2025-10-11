@@ -4,12 +4,11 @@ const Grade = require("../models/Grade");
 const createAssignment = async (request, response) => {
   try {
     const assignment = await Assignment.create(request.body);
-    response.status(200),
-      json({
-        message: `${request.method} Assignment created successfully`,
-        success: true,
-        data: assignment,
-      });
+    response.status(200).json({
+      message: `${request.method} Assignment created successfully`,
+      success: true,
+      data: assignment,
+    });
   } catch (error) {
     response.status(400).json({
       message: error.message,
@@ -20,11 +19,11 @@ const createAssignment = async (request, response) => {
 
 const getAllAssignments = async (request, response) => {
   try {
-    const assignment = await Assignment.find().sort("-createdAt");
+    const assignments = await Assignment.find().sort("-createdAt");
     response.status(200).json({
       message: `${request.method} All assignments found`,
       success: true,
-      assignment,
+      assignments,
     });
   } catch (error) {
     response.status(400).json({

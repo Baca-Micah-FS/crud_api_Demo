@@ -1,24 +1,20 @@
+import React from "react";
 import { useState, useEffect } from "react";
-import reactLogo from "./assets/react.svg";
-import viteLogo from "/vite.svg";
+import Header from "./components/Header";
+import Home from "./pages/Home";
+import Grades from "./pages/Grades";
+import { Route, Routes } from "react-router";
 import "./App.css";
 import axios from "axios";
 
 function App() {
-  const API_BASE =
-    import.meta.env.VITE_API_BASE || "http://localhost:8000/api/v1";
-  const api = axios.create({ baseURL: API_BASE });
-
-  async function getStudents() {
-    return api.get("/students");
-  }
-  async function postStudent(e) {
-    e.preventDefault();
-  }
-
   return (
     <>
-      <p>DQWA</p>
+      <Header />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/Grades" element={<Grades />} />
+      </Routes>
     </>
   );
 }

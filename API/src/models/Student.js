@@ -4,7 +4,7 @@ const studentSchema = new mongoose.Schema(
   {
     name: {
       type: String,
-      require: true,
+      required: true,
       trim: true,
       minLength: [2, "Name must be longer than 2 characters"],
       maxLength: [50, "Name can't be longer than 50 characters"],
@@ -22,6 +22,10 @@ const studentSchema = new mongoose.Schema(
       type: String,
       enum: ["Freshman", "Sophmore", "Junior", "Senior"],
       default: "Freshman",
+    },
+    grade: {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: "Grade",
     },
   },
   { timestamps: true }

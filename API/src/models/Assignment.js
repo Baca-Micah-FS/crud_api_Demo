@@ -19,6 +19,11 @@ const assignmentSchema = new mongoose.Schema(
       type: Date,
       required: false,
     },
+
+    grade: {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: "Grade",
+    },
   },
   { timestamps: true }
 );

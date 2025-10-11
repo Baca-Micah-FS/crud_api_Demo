@@ -5,12 +5,12 @@ const gradeSchema = new mongoose.Schema(
     student: {
       type: mongoose.Schema.Types.ObjectId,
       ref: "Student",
-      require: true,
+      required: true,
     },
 
     assignment: {
       type: mongoose.Schema.Types.ObjectId,
-      ref: "Student",
+      ref: "Assignment",
       required: true,
     },
 
@@ -19,7 +19,7 @@ const gradeSchema = new mongoose.Schema(
       required: true,
       trim: true,
       min: [0, "Score cannot be negative"],
-      max: ["Score cannot exceed 500 characters"],
+      max: [100, "Score cannot exceed 100"],
     },
   },
   { timestamps: true }

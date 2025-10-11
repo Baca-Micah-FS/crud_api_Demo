@@ -40,11 +40,12 @@ const createGrade = async (request, response) => {
 
 const getAllGrades = async (request, response) => {
   try {
+    console.log("1");
     const { student, assignment } = request.query;
     const filter = {};
     if (student) filter.student = student;
     if (assignment) filter.assignment = assignment;
-
+    console.log("2");
     const grades = await Grade.find(filter)
       .populate("student")
       .populate("assignment")
