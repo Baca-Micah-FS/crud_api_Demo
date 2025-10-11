@@ -8,8 +8,7 @@ const Header = (props) => {
       width: "100%",
       height: "105px",
       padding: "14",
-      backgroundColor: "pink",
-      color: "rgb(163, 173, 194)",
+      backgroundColor: "#283618",
       display: "flex",
       flexDirection: "row",
       justifyContent: "space-between",
@@ -18,7 +17,8 @@ const Header = (props) => {
     left: {
       display: "flex",
       flexDirection: "row",
-      color: "#778da9",
+      color: "#fefae0",
+
       width: "30%",
     },
     logo: {
@@ -27,7 +27,7 @@ const Header = (props) => {
       marginRight: "10px",
       alignItems: "center",
       padding: "5px 10px",
-      color: "#778da9",
+      color: "#fefae0",
     },
     searchCont: {
       border: "1px solid #ddd",
@@ -54,13 +54,11 @@ const Header = (props) => {
       flexDirection: "row",
       alignItems: "center",
       marginRight: "2%",
-      color: "black",
     },
     rightIcons: {
       display: "flex",
       margin: ".5rem",
-      backgroundColor: "rgb(163, 173, 194)",
-      color: "black",
+      backgroundColor: "#fefae0",
     },
     myIcon: {
       display: "flex",

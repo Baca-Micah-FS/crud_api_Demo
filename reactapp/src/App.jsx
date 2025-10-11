@@ -5,7 +5,7 @@ import Home from "./pages/Home";
 import Grades from "./pages/Grades";
 import { Route, Routes } from "react-router";
 import "./App.css";
-import axios from "axios";
+import Footer from "./components/Footer";
 
 function App() {
   return (
@@ -15,6 +15,7 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/Grades" element={<Grades />} />
       </Routes>
+      <Footer />
     </>
   );
 }

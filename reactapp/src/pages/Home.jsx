@@ -52,7 +52,7 @@ const Home = () => {
         description: e.target.description.value,
         dueDate: e.target.dueDate.value,
       });
-      const [assignmentsRes] = await Promise.all([setAssignments()]);
+      const [assignmentsRes] = await Promise.all([getAssignments()]);
       setAssignments(assignmentsRes.data.assignments);
     } catch (error) {
       console.error(error);
@@ -90,14 +90,19 @@ const Home = () => {
               <label htmlFor="email">Email</label>
               <input style={styles.input} type="text" name="email"></input>
               <label htmlFor="classLevel">Class</label>
-              <input style={styles.input} type="text" name="classLevel"></input>
+              <select name="classLevel" style={styles.input}>
+                <option>Freshman</option>
+                <option>Sophmore</option>
+                <option>Junior</option>
+                <option>Senior</option>
+              </select>
               <button style={styles.button} type="submit">
                 Add
               </button>
             </article>
           </form>
         </div>
-        <div>
+        <div style={{ textAlign: "center" }}>
           <h1>My Students</h1>
           <table style={styles.table}>
             <thead>
@@ -136,7 +141,7 @@ const Home = () => {
           <form onSubmit={postAssignment}>
             <h1>Add Assignment</h1>
             <article style={styles.form}>
-              <label htmlFor="title">Name</label>
+              <label htmlFor="title">Assignment</label>
               <input style={styles.input} type="text" name="title"></input>
               <label htmlFor="description">Description</label>
               <input
@@ -153,7 +158,7 @@ const Home = () => {
             </article>
           </form>
         </div>
-        <div>
+        <div style={{ textAlign: "center" }}>
           <h1>My Assignments</h1>
 
           <table style={styles.table}>
@@ -195,7 +200,6 @@ export default Home;
 
 const styles = {
   form: {
-    backgroundColor: "#d1d1d1",
     boxShadow: "4px 4px 4px #363636",
     display: "flex",
     flexDirection: "column",
@@ -204,6 +208,9 @@ const styles = {
     textAlign: "left",
     fontSize: "18px",
     padding: "10px",
+    backgroundColor: "#dda15e",
+    color: "#283618",
+    fontWeight: "bold",
   },
 
   input: {
@@ -212,7 +219,7 @@ const styles = {
   },
 
   container: {
-    backgroundColor: "#ededed",
+    backgroundColor: "#fefae0",
     width: "1200px",
     display: "flex",
     flexDirection: "row",
@@ -232,5 +239,6 @@ const styles = {
   button: {
     width: "25%",
     margin: "8px 8px 8px 0px",
+    backgroundColor: "#283618",
   },
 };
